@@ -1,0 +1,19 @@
+/* styling file */
+
+label {
+    color: #cad3f5;
+}
+
+.title {
+    color: #f4dbd6;
+    font-weight: bold;
+}
+
+.value {
+    color: #f4dbd6;
+    font-weight: bold;
+}
+
+.background-hidden {
+    background-color: transparent;
+}
