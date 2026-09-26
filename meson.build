@@ -15,6 +15,8 @@ executable(
   'src/ui/ui.cpp',
   'src/ui/ui.hpp',
   'src/main.cpp',
+'src/daemons/progress.cpp',
+'src/daemons/progress.hpp',
   dependencies: gtkmm,
   install: true,
 )
