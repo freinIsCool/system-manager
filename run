@@ -1,0 +1,4 @@
+#!/bin/bash/
+
+meson compile -C build
+./build/system-manager
