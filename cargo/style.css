@@ -13,6 +13,6 @@ window.transparent-window { background-color: transparent; }
 .system-panel.background-hidden { background-color: transparent; }
 .meter { min-width: 100px; }
 
-progressbar { min-height: 12px; }
-progressbar trough { min-height: 12px; border-radius: 3px; background: alpha(@borders, 0.35); }
-progressbar progress { min-height: 12px; border-radius: 3px; background: @accent_bg_color; }
+progressbar.meter { border: none; box-shadow: none; }
+progressbar.meter trough { margin: 0; padding: 0; border: none; border-radius: 14px; box-shadow: none; background: alpha(@borders, 0.35); }
+progressbar.meter progress { margin: 0; padding: 0; border: none; border-radius: 14px; box-shadow: none; background: @accent_bg_color; }

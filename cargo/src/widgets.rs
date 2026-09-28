@@ -38,7 +38,7 @@ fn create_resource_row(label_text: &str, bar: &ProgressBar, usage_label: &Label)
         .build();
 
     let label = Label::new(Some(label_text));
-    label.set_width_chars(16);
+    label.set_width_request(135);
     label.set_xalign(0.0);
     label.add_css_class("metric-label");
 
@@ -49,13 +49,15 @@ fn create_resource_row(label_text: &str, bar: &ProgressBar, usage_label: &Label)
 
     let bar_box = Box::builder()
         .orientation(gtk4::Orientation::Horizontal)
-        .width_request(190)
+        .width_request(120)
+        .halign(gtk4::Align::Center)
         .build();
+    bar.set_hexpand(true);
     bar_box.append(bar);
 
     row.append(&label);
-    row.append(&value);
     row.append(&bar_box);
+    row.append(&value);
     row
 }
 
