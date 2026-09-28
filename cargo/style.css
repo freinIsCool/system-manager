@@ -1,19 +1,18 @@
 /* styling file */
 
-label {
-    color: #cad3f5;
-}
+window { background-color: @window_bg_color; }
+window.transparent-window { background-color: transparent; }
 
-.title {
-    color: #f4dbd6;
-    font-weight: bold;
-}
+#system-panel { background-color: alpha(@card_bg_color, 0.96); border-radius: 12px; padding: 0; }
 
-.value {
-    color: #f4dbd6;
-    font-weight: bold;
-}
+.title-label { font-size: 18px; font-weight: 700; color: @window_fg_color; }
+.metric-label { font-size: 14px; color: @window_fg_color; }
+.value-label { font-size: 13px; color: @window_fg_color; font-weight: 700; }
+.title-button { font-size: 12px; color: @window_fg_color; background-color: alpha(@accent_bg_color, 0.12); border: 1px solid @accent_bg_color; border-radius: 8px; padding: 6px 12px; }
+.close-button { border-color: transparent; }
+.system-panel.background-hidden { background-color: transparent; }
+.meter { min-width: 100px; }
 
-.background-hidden {
-    background-color: transparent;
-}
+progressbar { min-height: 12px; }
+progressbar trough { min-height: 12px; border-radius: 3px; background: alpha(@borders, 0.35); }
+progressbar progress { min-height: 12px; border-radius: 3px; background: @accent_bg_color; }

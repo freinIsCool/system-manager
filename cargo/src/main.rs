@@ -14,21 +14,11 @@ fn main() -> glib::ExitCode {
 
     app.connect_activate(|app| {
         let css_provider = CssProvider::new();
-        css_provider.load_from_data(
-            "window { background-color: #20293a; }\n\
-             window.transparent-window { background-color: transparent; }\n\
-             #system-panel { background-color: rgba(32, 41, 58, 0.96); border-radius: 12px; padding: 0; }\n\
-             .title-label { font-size: 18px; font-weight: 700; color: #edf5ff; }\n\
-             .metric-label { font-size: 14px; color: #dfe9f9; text-shadow: 2px 0 #000000, -1px 0 #111827, 0 1px #111827, 0 -1px #111827; }\n\
-             .value-label { font-size: 13px; color: #dfe9f9; font-weight: 700; text-shadow: 2px 0 #000000, -1px 0 #111827, 0 1px #111827, 0 -1px #111827; }\n\
-             .title-button { font-size: 12px; color: #edf5ff; background-color: rgba(255, 255, 255, 0.04); border: 1px solid rgba(163, 170, 255, 0.75); border-radius: 8px; padding: 6px 12px; }\n\
-             .close-button { border-color: rgba(172, 138, 255, 0.0); }\n\
-             .system-panel.background-hidden { background-color: transparent; }\n\
-             .meter { min-width: 190px; }\n\
-             progressbar { min-height: 12px; }\n\
-             progressbar trough { min-height: 12px; border-radius: 3px; background: rgba(138, 150, 180, 0.35); }\n\
-             progressbar progress { min-height: 12px; border-radius: 3px; background: #8ab7ff; }\n",
-        );
+
+        // load css
+
+        let css_file = gtk4::gio::File::for_path("style.css");
+        css_provider.load_from_file(&css_file);
 
         if let Some(display) = Display::default() {
             gtk4::style_context_add_provider_for_display(

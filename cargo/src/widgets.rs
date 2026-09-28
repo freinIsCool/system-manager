@@ -117,11 +117,11 @@ pub fn build_widgets() -> Widgets {
     let vram_usage_label = Label::new(Some("0%"));
     let system_load_usage_label = Label::new(Some("0%"));
 
-    let memory_row = create_resource_row("Memory Usage", &memory_bar, &memory_usage_label);
+    let memory_row = create_resource_row("RAM Usage", &memory_bar, &memory_usage_label);
     let storage_row = create_resource_row("Storage Usage", &storage_bar, &storage_usage_label);
     let cpu_row = create_resource_row("CPU Usage", &cpu_bar, &cpu_usage_label);
     let swap_row = create_resource_row("Swap Usage", &swap_bar, &swap_usage_label);
-    let vram_row = create_resource_row("Virtual Memory Usage", &vram_bar, &vram_usage_label);
+    let vram_row = create_resource_row("VRAM Usage", &vram_bar, &vram_usage_label);
     let load_row = create_resource_row("System Load", &system_load_bar, &system_load_usage_label);
 
     box_.append(&memory_row);

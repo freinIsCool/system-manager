@@ -1,0 +1,9 @@
+
+echo "cd cargo/"
+cd cargo/
+
+echo "building"
+cargo build
+
+echo "running the app"
+./target/debug/SystemManager
