@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd build/
+
+rm -r .
+
+dmd "$(cat ../build.txt)"
+
+./main
