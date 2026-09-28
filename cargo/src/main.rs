@@ -7,6 +7,10 @@ use gtk4::gdk::Display;
 
 use crate::{bar_update::schedule_bar_updates, widgets::build_widgets};
 
+// Compile the stylesheet into the executable so the application remains styled
+// when it is launched outside the project directory.
+const STYLE_CSS: &str = include_str!("../style.css");
+
 fn main() -> glib::ExitCode {
     let app = Application::builder()
         .application_id("Org.Frein.SystemManager")
@@ -15,10 +19,7 @@ fn main() -> glib::ExitCode {
     app.connect_activate(|app| {
         let css_provider = CssProvider::new();
 
-        // load css
-
-        let css_file = gtk4::gio::File::for_path("style.css");
-        css_provider.load_from_file(&css_file);
+        css_provider.load_from_data(STYLE_CSS);
 
         if let Some(display) = Display::default() {
             gtk4::style_context_add_provider_for_display(
