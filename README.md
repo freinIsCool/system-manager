@@ -2,13 +2,11 @@ a simple, compact rust/gtk4 app that monitors the usage of storage, cpu, ram and
 made to run in your corner
 
 
-<img width="534" height="264" alt="image" src="https://github.com/user-attachments/assets/39385aec-fa13-4942-a6f3-8d514df688f5" />
+<img width="427" height="191" alt="dms_capture_1790689066568" src="https://github.com/user-attachments/assets/d2bb1bb9-149f-446c-9f28-efcede15bd3d" />
 
 
 
-~~*fun fact: the entice code is located within the main.py file you can run it using python3 it will work the same as the appimage*~~
 
-~~TODO: complete rust/gtk4 rewrite~~
 
 ### compiling from source
 
@@ -26,8 +24,19 @@ dependencies:
 # 1. clone the repo
 git clone https://github.com/freinIsCool/system-manager.git
 cd system-manager
+```
 
+```bash
 # 2. build
 cd cargo/
 cargo build
 ```
+**or**
+
+```bash
+# build and run
+chmod +x run
+./run
+```
+
+the compiled binary is located in cargo/target/debug/SystemManager
